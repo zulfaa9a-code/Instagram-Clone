@@ -1,0 +1,25 @@
+const express= require('express')
+const cookieParser= require("cookie-parser")
+const cors = require("cors")
+
+
+const app = express()
+app.use(express.json())
+app.use(cookieParser())
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials:true
+}))
+
+// require routes
+const authRouter= require("./routes/auth.routes")
+const postRouter = require('./routes/post.routes')
+const userRouter = require('./routes/user.routes')
+const messageRoutes = require('./routes/message.routes')
+
+app.use('/api/messages', messageRoutes)
+// using routes
+app.use(authRouter)
+app.use("/users",userRouter)
+app.use("/posts",postRouter)
+module.exports=app;

@@ -1,0 +1,34 @@
+.nav-bar {
+    position: fixed; display: flex;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 4rem;
+   flex-shrink: 0;
+    display: flex;
+    flex-direction: column; 
+    align-items:center; justify-content: space-between;
+
+    padding: 20px 0;
+    background-color: white;
+    border-right: 1px solid #dbdbdb;
+    .middle
+    {
+        display: flex;
+    flex-direction: column;  gap:2rem;
+    align-items:center; 
+    }
+    .logo-svg {
+    width: 3rem;
+    margin-bottom: 1rem;
+    }
+    button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    img {
+    width: 2rem;
+}
+}
+
+}

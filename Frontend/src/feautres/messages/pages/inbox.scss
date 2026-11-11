@@ -1,0 +1,15 @@
+.inbox-layout {
+    background: #f0ecec;
+    width: 100%;
+    color : black;
+    height: 100vh;
+    display: flex; flex-direction: row;
+    overflow: hidden; width: calc(100% - 4rem);
+    margin-left: 4rem;
+    .direct-messages {
+        display: flex;
+        flex: 1;
+        min-width: 0;
+        height: 100%;
+    }
+}

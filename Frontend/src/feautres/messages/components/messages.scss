@@ -1,0 +1,150 @@
+// Variables
+$bg-panel: #ffffff;
+$bg-header: #fafafa;
+$border-color: #dbdbdb;
+$text-primary: #262626;
+$text-muted: #8e8e8e;
+$accent: #0095f6;
+$accent-hover: #1877f2;
+$radius: 22px;
+
+.messages-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%; width: 60%;
+    background: $bg-panel;
+    color: $text-primary;
+
+    // Header
+    .message-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 20px;
+        background: $bg-header;
+        border-bottom: 1px solid $border-color;
+
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid $border-color;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    // Chat area
+    .message-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 20px;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $border-color;
+            border-radius: 3px;
+        }
+
+        .empty-chat {
+            margin: auto;
+            font-size: 14px;
+            color: $text-muted;
+            text-align: center;
+        }
+    }
+
+    // Input
+    .message-input {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 12px 20px 16px;
+        padding: 6px 6px 6px 18px;
+        border: 1px solid $border-color;
+        border-radius: $radius;
+        transition: border-color 0.2s;
+
+        &:focus-within {
+            border-color: darken($border-color, 15%);
+        }
+
+        input {
+            flex: 1;
+            min-width: 0;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 14px;
+            color: $text-primary;
+
+            &::placeholder {
+                color: $text-muted;
+            }
+        }
+
+        button {
+            padding: 8px 18px;
+            border: none;
+            border-radius: $radius;
+            background: $accent;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+
+            &:hover {
+                background: $accent-hover;
+            }
+
+            &:active {
+                transform: scale(0.96);
+            }
+
+            &:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    // Empty state (no user selected)
+    .no-chat {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 20px;
+        text-align: center;
+
+        h2 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 300;
+        }
+
+        p {
+            margin: 0;
+            font-size: 14px;
+            color: $text-muted;
+        }
+    }
+}

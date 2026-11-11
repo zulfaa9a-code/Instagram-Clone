@@ -1,0 +1,8 @@
+UI - show UI and navigate user
+hook (orchestration) = > manages state nd API layer
+state layer - manage state /data storage
+                  loading
+                  user
+                  ppst list
+                  error
+API layer => communicate w backend
